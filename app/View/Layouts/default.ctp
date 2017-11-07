@@ -6,11 +6,8 @@
 	  <?= $this->fetch('title') ?>
 	</title>
 	<?= $this->Html->meta('icon') ?>
+	<?= $this->element('css') ?>
 	<?= $this->fetch('meta') ?>
-	<?= $this->Html->css('boostrap/bootstrap.css') ?>
-	<?= $this->Html->css('boostrap/bootstrap.min.css') ?>
-	<?= $this->fetch('css') ?>
-	<?= $this->fetch('script') ?>
   </head>
   <body>
 
@@ -20,6 +17,7 @@
     <div class="container">
 	  <?= $this->Flash->render() ?>
 	  <?= $this->fetch('content'); ?>
+	  <?= $this->element('js') ?>
     </div>
   </body>
 </html>
