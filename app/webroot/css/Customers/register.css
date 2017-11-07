@@ -1,0 +1,24 @@
+/*申し込み画面*/
+#register-form{
+    margin-top: 10vh;
+}
+
+/*申し込み画面のタイトル*/
+#register-title{
+    margin-bottom: 5vh;
+    background-color: #FAD3E4;
+    border-bottom: 5px #EA609E solid;
+    color: #A51555;
+    width: 130vh;
+    height: 7vh;
+    padding: 10px 10px 10px 15px;
+}
+
+/*申し込み画面のtable*/
+#register-table-th{
+    width: 20vw;
+}
+
+#register-table-td{
+    width: 40vw;
+}

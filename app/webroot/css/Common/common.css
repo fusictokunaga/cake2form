@@ -1,0 +1,9 @@
+/*要素を横並びにする*/
+#beside-object {
+    display: inline-block;
+}
+
+/*ボタン*/
+#submit-button{
+    text-align: center;
+}
