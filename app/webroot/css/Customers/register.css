@@ -1,7 +1,7 @@
 /*申し込み画面*/
 #register-form{
     margin-top: 10vh;
-    width: 80vw;
+    width: 70vw;
 }
 
 /*申し込み画面のタイトル*/
@@ -24,6 +24,7 @@
 /*申し込み画面のtable*/
 #register-table-th{
     width: 20vw;
+    background-color: #FDEEF4;
 }
 
 #register-table-td{

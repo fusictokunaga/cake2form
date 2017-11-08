@@ -61,26 +61,70 @@
         </td>
       </tr>
     </table>
-    <table>
+    <div>
+       携帯電話、自宅電話番号のいずれかは必ず入力
+    </div>
+    <table class="table">
       <tr>
         <th id="register-table-th">
-          携帯番号 (*必須)
+          携帯番号
         </th>
         <td id="register-table-td">
-          <?= $this->Form->input('mobile_phone', ['label' => false, 'type' => 'text']); ?>
+          <div id="beside-object">
+            <?= $this->Form->input('mobile_phone1', ['label' => false, 'type' => 'text']); ?>
+          </div>
+          <div id="beside-object">-</div>
+          <div id="beside-object">
+            <?= $this->Form->input('mobile_phone2', ['label' => false, 'type' => 'text']); ?>
+          </div>
+          <div id="beside-object">-</div>
+          <div id="beside-object">
+            <?= $this->Form->input('mobile_phone3', ['label' => false, 'type' => 'text']); ?>
+          </div>
         </td>
       </tr>
       <tr>
         <th id="register-table-th">
-          携帯番号 (*必須)
+          自宅電話番号
         </th>
         <td id="register-table-td">
-          <?= $this->Form->input('mobile_phone', ['label' => false, 'type' => 'text']); ?>
+          <div id="beside-object">
+            <?= $this->Form->input('home_phone1', ['label' => false, 'type' => 'text']); ?>
+          </div>
+          <div id="beside-object">-</div>
+          <div id="beside-object">
+            <?= $this->Form->input('home_phone2', ['label' => false, 'type' => 'text']); ?>
+          </div>
+          <div id="beside-object">-</div>
+          <div id="beside-object">
+            <?= $this->Form->input('home_phone3', ['label' => false, 'type' => 'text']); ?>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th id="register-table-th">
+          メールアドレス
+        </th>
+        <td id="register-table-td">
+          <?= $this->Form->input('email', ['label' => false, 'type' => 'text']); ?>
+        </td>
+      </tr>
+      <tr>
+        <th id="register-table-th">
+          メールアドレス (確認用)
+        </th>
+        <td id="register-table-td">
+          <?= $this->Form->input('email_check', ['label' => false, 'type' => 'text']); ?>
         </td>
       </tr>
     </table>
   </div>
   <div id="submit-button">
-    <?= $this->Form->end('確認'); ?>
+    <?= $this->Form->button('確認', array(
+      'type' => 'submit',
+      'name' => 'confirm',
+      'value' => 'confirm'
+    )); ?>
+    <?= $this->Form->end(); ?>
   </div>
 </div>
