@@ -8,13 +8,30 @@ class AppSchema extends CakeSchema {
 	public function after($event = array()) {
 	}
 
+	public $customer_categories = array(
+		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 11, 'key' => 'primary'),
+		'name' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'indexes' => array(
+			'PRIMARY' => array('unique' => true, 'column' => 'id')
+		),
+		'tableParameters' => array()
+	);
+
 	public $customers = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 11, 'key' => 'primary'),
 		'last_name' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
 		'first_name' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
 		'last_name_kana' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
 		'first_name_kana' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
-		'gender' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'birthday' => array('type' => 'datetime', 'null' => true, 'default' => null),
+		'number' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'mobile_phone1' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'mobile_phone2' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'mobile_phone3' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'home_phone1' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'home_phone2' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'home_phone3' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
+		'email' => array('type' => 'text', 'null' => true, 'default' => null, 'length' => 1073741824),
 		'indexes' => array(
 			'PRIMARY' => array('unique' => true, 'column' => 'id')
 		),
