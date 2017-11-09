@@ -5,29 +5,58 @@ App::uses('AppController', 'Controller');
 class CustomersController extends AppController
 {
 
+    public $components = array('Transition.Transition');
+
+    /**
+     *申込フォーム入力
+     *
+     */
     public function register()
     {
-        if (!$this->request->is('post') || !$this->request->data) {
-            return;
+        $this->Transition->checkData('check');
+    }
+
+    /**
+     * 入力されたデータをチェック
+     *
+     */
+    public function check()
+    {
+        $this->Transition->automate(
+            'register', // 前のアクション
+            'submit',   // 次のアクション
+            'Customer'
+        );
+
+        $this->set('data', $this->Transition->mergedData()['Customer']);
+
+    }
+
+    public function submit()
+    {
+        $this->Transition->checkPrev([
+            'register',
+            'check'
+        ]);
+
+        $customerData = $this->Transition->mergedData();
+
+        $this->Customer->create();
+        if ($this->Customer->save($customerData)) {
+            $this->Transition->clearData();
+            return $this->redirect(['action' => 'complete']);
         }
 
-        $this->Customer->set($this->request->data);
+        $this->redirect(['error']);
+    }
 
-        switch ($this->request->data['confirm']) {
-            case 'confirm':
-                $data = $this->request->data['Customer'];
-                $this->set(compact('data'));
-                $this->render('check');
-                break;
-            case 'send':
-                $this->Customer->create();
-                if ($this->Customer->save($this->request->data)) {
-                    $this->Flash->success(__('Your post has been saved.'));
-                    return $this->redirect(array('action' => 'register'));
-                }
+    public function complete()
+    {
 
-                $this->Flash->error(__('Unable to add your post.'));
-                break;
-        }
+    }
+
+    public function error()
+    {
+
     }
 }
