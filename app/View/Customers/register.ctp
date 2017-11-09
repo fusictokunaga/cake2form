@@ -1,5 +1,5 @@
 <div id="register-form">
-  <h2 id="register-title">○○○○○申込み</h2>
+  <h2 id="register-title"><?= $customerCategory['CustomerCategory']['name'] ?>フォーム</h2>
 
   <div id="explanation-text">
     申込者本人が記入してください。
@@ -8,6 +8,7 @@
     後日、連絡します。
   </div>
   <?= $this->Form->create('Customer') ?>
+  <?= $this->Form->hidden('customer_category_id', ['value' => $customerCategory['CustomerCategory']['id']]) ?>
   <div>
     <table class="table">
       <tr>

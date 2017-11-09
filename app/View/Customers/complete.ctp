@@ -6,5 +6,9 @@
     <br/>
     後日、こちらから連絡します。
   </div>
+
+  <div>
+    <?= $this->Html->link('各申込リンク画面へ戻る', ['action' => 'index']) ?>
+  </div>
 </div>
 

@@ -5,7 +5,7 @@
     エラーが発生しました。
   </div>
 
-  <div class="l-button-area">
+  <div>
     <?= $this->Html->link('申込フォームへ戻る', ['action' => 'register']) ?>
   </div>
 </div>
