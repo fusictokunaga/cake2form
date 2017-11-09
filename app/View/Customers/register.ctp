@@ -7,7 +7,7 @@
     <br/>
     後日、連絡します。
   </div>
-  <?= $this->Form->create('Customer') ?>
+  <?= $this->Form->create('Customer', ['novalidate' => true]) ?>
   <?= $this->Form->hidden('customer_category_id', ['value' => $customerCategory['CustomerCategory']['id']]) ?>
   <div>
     <table class="table">
