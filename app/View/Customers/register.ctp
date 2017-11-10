@@ -7,7 +7,7 @@
     <br/>
     後日、連絡します。
   </div>
-  <?= $this->Form->create('Customer', ['novalidate' => true]) ?>
+  <?= $this->Form->create('Customer', ['novalidate' => true, 'id' => 'form_entry']) ?>
   <?= $this->Form->hidden('customer_category_id', ['value' => $customerCategory['CustomerCategory']['id']]) ?>
   <div>
     <table class="table">
@@ -18,11 +18,11 @@
         <td id="register-table-td">
           <div id="beside-object">
             <label>姓</label>
-              <?= $this->Form->input('last_name', ['label' => false, 'type' => 'text']); ?>
+              <?= $this->Form->input('last_name', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <div id="beside-object">
             <label>名</label>
-              <?= $this->Form->input('first_name', ['label' => false, 'type' => 'text']); ?>
+              <?= $this->Form->input('first_name', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <br/>
           例）島 太郎
@@ -35,11 +35,11 @@
         <td id="register-table-td">
           <div id="beside-object">
             <label>セイ</label>
-              <?= $this->Form->input('last_name_kana', ['label' => false, 'type' => 'text']); ?>
+              <?= $this->Form->input('last_name_kana', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <div id="beside-object">
             <label>メイ</label>
-              <?= $this->Form->input('first_name_kana', ['label' => false, 'type' => 'text']); ?>
+              <?= $this->Form->input('first_name_kana', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <br/>
           例）シマ タロウ
@@ -72,15 +72,15 @@
         </th>
         <td id="register-table-td">
           <div id="beside-object">
-            <?= $this->Form->input('mobile_phone1', ['label' => false, 'type' => 'text']); ?>
+            <?= $this->Form->input('mobile_phone1', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <div id="beside-object">-</div>
           <div id="beside-object">
-            <?= $this->Form->input('mobile_phone2', ['label' => false, 'type' => 'text']); ?>
+            <?= $this->Form->input('mobile_phone2', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <div id="beside-object">-</div>
           <div id="beside-object">
-            <?= $this->Form->input('mobile_phone3', ['label' => false, 'type' => 'text']); ?>
+            <?= $this->Form->input('mobile_phone3', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
         </td>
       </tr>
@@ -90,15 +90,15 @@
         </th>
         <td id="register-table-td">
           <div id="beside-object">
-            <?= $this->Form->input('home_phone1', ['label' => false, 'type' => 'text']); ?>
+            <?= $this->Form->input('home_phone1', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <div id="beside-object">-</div>
           <div id="beside-object">
-            <?= $this->Form->input('home_phone2', ['label' => false, 'type' => 'text']); ?>
+            <?= $this->Form->input('home_phone2', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
           <div id="beside-object">-</div>
           <div id="beside-object">
-            <?= $this->Form->input('home_phone3', ['label' => false, 'type' => 'text']); ?>
+            <?= $this->Form->input('home_phone3', ['label' => false, 'type' => 'text', 'class' => 'validate[required]']); ?>
           </div>
         </td>
       </tr>
@@ -107,7 +107,7 @@
           メールアドレス
         </th>
         <td id="register-table-td">
-          <?= $this->Form->input('email', ['label' => false, 'type' => 'text']); ?>
+          <?= $this->Form->input('email', ['label' => false, 'type' => 'text', 'class' => 'validate[required, custom[email]]']); ?>
         </td>
       </tr>
       <tr>
@@ -115,7 +115,7 @@
           メールアドレス (確認用)
         </th>
         <td id="register-table-td">
-          <?= $this->Form->input('email_check', ['label' => false, 'type' => 'text']); ?>
+          <?= $this->Form->input('email_check', ['label' => false, 'type' => 'text', 'class' => 'validate[required, custom[email]]']); ?>
         </td>
       </tr>
     </table>
